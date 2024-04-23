@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點按鈕換圖片</title>
+</head>
+
+<body>
+    <img src="./images/0104.jpg" id="img">
+    <br>
+    <input type="button" value="按鈕" id="btn">
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('#btn').click(function () {
+            if ($('#img').attr('src') == './images/0507.jpg') {
+                $('#img').attr('src', './images/0104.jpg')
+            } else { $('#img').attr('src', './images/0507.jpg') }
+        })
+
+    </script>
+</body>
+
+</html>

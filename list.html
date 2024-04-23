@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製作待辦清單</title>
+</head>
+
+<body>
+    <input type="text" id="input-text">
+    <input type="button" value="新增" id="add">
+
+    <ul id="ul">
+    </ul>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // 點新增按鈕
+        $('#add').click(function () {
+            // 將輸入欄位的字新增到清單
+            // $('#input-text').val()為輸入欄位的字
+            $('#ul').append(`<li class="li">${$('#input-text').val()} <input type="button" value="刪除" class="delete"></li>`)
+        })
+
+        $('#ul').on('click', '.delete', function () {
+            // $('.delete').index(this)是點擊的按鈕之index值
+            $('.li').eq(`${$('.delete').index(this)}`).remove()
+            /* 方法二（按鈕的父層是li）
+                $(this).parent().remove()*/
+        })
+
+
+    </script>
+</body>
+
+</html>
